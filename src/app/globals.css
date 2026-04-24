@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-deepest: #0A0A0F;
+  --color-bg-surface: #12121A;
+  --color-bg-elevated: #1A1A26;
+  --color-border-panel: #2A2A3C;
+  --color-text-primary: #E8E8ED;
+  --color-text-secondary: #8888A0;
+  --color-text-muted: #555566;
+  --color-accent-callstack: #6C5CE7;
+  --color-accent-webapi: #00B894;
+  --color-accent-microtask: #E17055;
+  --color-accent-task: #FDCB6E;
+  --color-accent-eventloop: #00CEC9;
+  --color-accent-currentline: #74B9FF;
+  --color-accent-console: #55EFC4;
+}
+
+:root {
+  color-scheme: dark;
+}  
+
+body {
+  background: var(--color-bg-deepest);
+  color: var(--color-text-primary);
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-panel);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* Monaco editor overrides */
+.monaco-editor .margin {
+  background: var(--color-bg-surface) !important;
+}
+
+.line-highlight {
+  background: rgba(116, 185, 255, 0.12) !important;
+  border-left: 3px solid var(--color-accent-currentline) !important;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
